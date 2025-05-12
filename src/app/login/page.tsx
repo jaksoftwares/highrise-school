@@ -1,7 +1,7 @@
-"use client"
+'use client'
 
 import { useState } from 'react'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 
 export default function Login() {
   const router = useRouter()
@@ -21,10 +21,9 @@ export default function Login() {
     setIsSubmitting(true)
     setError('')
 
-    // Simulate a login process (you can replace this with actual login logic)
     setTimeout(() => {
       if (formData.email === 'test@example.com' && formData.password === 'password') {
-        router.push('/dashboard') // Redirect to dashboard on successful login
+        router.push('/dashboard') // works correctly now
       } else {
         setError('Invalid credentials, please try again.')
         setIsSubmitting(false)
